@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Form for Sharing Books</title>
+</head>
+
+<body>
+  <h1>Search Here for Books:</h1>
+
+  <form action="/searches" method="post">
+    <input type="text" name="search" placeholder="enter author or title" required>
+    <fieldset>
+      <label for="title">Title:</label>
+      <input type="radio" name="search" value="title" required>
+    </fieldset>
+    <fieldset>
+      <label for="author">Author:</label>
+      <input type="radio" name="search" value="author" required>
+    </fieldset>
+    <button type="submit">Search Google Books API</button>
+  </form>
+</body>
+
+</html>
