@@ -4,7 +4,7 @@ const app = express();
 const superagent = require('superagent');
 const PORT = process.env.PORT || 5000;
 
-const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+// const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 
 app.use(express.static('./public'));
 app.use(express.urlencoded({ extended: true }));

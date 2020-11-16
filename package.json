@@ -18,6 +18,9 @@
     "url": "https://github.com/NyxofDarkness/book_app/issues"
   },
   "homepage": "https://github.com/NyxofDarkness/book_app#readme",
+  "engines": {
+    "node": "12.x"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
