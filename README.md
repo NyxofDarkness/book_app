@@ -16,12 +16,12 @@ Javascript, css,
 Number and name of feature: Initial Setup
 Estimate of time needed to complete: 2 hours
 Start time: 2pm
-Finish time: 
-Actual time needed to complete: 
+Finish time: 5pm
+Actual time needed to complete: 3 hours
 
-Number and name of feature: 
-Estimate of time needed to complete: 
-Start time: 
+Number and name of feature: CSS from Wireframes
+Estimate of time needed to complete: 3 Hours
+Start time: 8:06pm
 Finish time: 
 Actual time needed to complete: 
 

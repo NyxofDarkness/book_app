@@ -3,11 +3,25 @@
 
 <head>
   <title>RESULTS</title>
+  <link rel="stylesheet" href="../styles/reset.css">
+  <link rel="stylesheet" href="../styles/base.css">
 </head>
 
 <body>
   <main>
-    <%= searchResults %>
+    <ul>
+      <% bookInfo.forEach(function(o) {%>
+      <li>
+        Title:<%= o.title %>
+      <li>
+        Author Name:<%= o.author %>
+      </li>
+      Description:<%= o.description %>
+      <li>
+        <img src="<%= o.image %>" alt="<%= o.image %>">
+        <% }) %>
+      </li>
+    </ul>
   </main>
 </body>
 
