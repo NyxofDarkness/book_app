@@ -1,0 +1,18 @@
+body {
+  background: rgb(221, 179, 112);
+  color: rgb(107, 76, 46)
+}
+
+
+@media screen and (max-width: 768px) {
+
+  header {
+  background-color: RGb(135, 64, 25);
+  color: rgb(107, 76, 46)
+  }
+
+}
+
+@media screen and (max-width: 960px) {
+
+}
