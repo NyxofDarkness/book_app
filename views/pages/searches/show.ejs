@@ -2,26 +2,45 @@
 <html>
 
 <head>
-  <title>RESULTS</title>
-  <link rel="stylesheet" href="../styles/reset.css">
-  <link rel="stylesheet" href="../styles/base.css">
+  <%- include('../layout/head.ejs') %>
 </head>
 
 <body>
+  <%- include('../layout/header.ejs') %>
   <main>
+    <h2>Search Results</h2>
     <ul>
       <% bookInfo.forEach(function(o) {%>
-      <li>
-        Title:<%= o.title %>
-      <li>
-        Author Name:<%= o.author %>
-      </li>
-      Description:<%= o.description %>
-      <li>
-        <img src="<%= o.image %>" alt="<%= o.image %>">
-        <% }) %>
-      </li>
+      <div class="bookboxes">
+        <li>
+          <form action="/add" method="post">
+            <img src="<%= o.image %>" alt="<%= o.image %>" name="image" value="image">
+            <p class="textbody" id="title" name="title" value="title">
+              <%= o.title %>
+            </p>
+            <p class="textbody" id="author" name="author" value="author">
+              <%= o.author %>
+            </p>
+            <p class="textbody" id="description" name="description">
+              Description: <%= o.description %>
+            </p>
+
+            <input type="hidden" name="title" value="<%= o.title %>">
+            <input type="hidden" name="image" value="<%= o.image %>">
+            <input type="hidden" name="author" value="<%= o.author %>">
+            <input type="hidden" name="description" value="<%= o.description %>">
+            <input type="hidden" name="isbn" value="<%= o.isbn %>">
+            <button type="submit">Add this Book to your bookshelf!</button>
+          </form>
+        </li>
+      </div>
+      <% })%>
     </ul>
+
+
+
+
+
   </main>
 </body>
 
