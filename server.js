@@ -5,6 +5,7 @@ const express = require('express');
 const app = express();
 const superagent = require('superagent');
 const pg = require('pg');
+const methodOverride = require('method-override');
 
 
 const PORT = process.env.PORT || 5000;
@@ -13,7 +14,7 @@ const client = new pg.Client(process.env.DATABASE_URL);
 let bookInfo = [];
 
 
-
+app.use(methodOverride('_method'));
 app.use('/public', express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
@@ -22,9 +23,10 @@ app.get('/', renderHome); // homepage-works
 app.get('/searches/new', showForm); // form page- works
 app.get('/hello', showHello); //null
 app.get('/error', showError); // all encompassing error
-app.get('/books/:books_id', getBookDetails); // book details from shelf
+app.get('/books/:books_id', getBookDetails); // book details from shelf-works
 app.post('/searches', createSearch); // book results to choose from-works
-app.post('/add', addBooks); // add to bookshelf
+app.post('/add', addBooks); // add to bookshelf-works
+// app.put()
 
 // add books to bookshelf
 function addBooks(req, res) {

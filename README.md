@@ -28,8 +28,8 @@ Actual time needed to complete:
 Number and name of feature: DataBase Configuration
 Estimate of time needed to complete: 1 hour
 Start time: 2:13
-Finish time: 
-Actual time needed to complete: 
+Finish time: 3pm
+Actual time needed to complete: about an hour... more added through project to add features
 
 Number and name of feature: User Acceptance Tests
 Estimate of time needed to complete: 2 hours
@@ -39,15 +39,15 @@ Actual time needed to complete:
 
 Number and name of feature: Saved books displayed on homepage
 Estimate of time needed to complete: 2 hours
-Start time: 
-Finish time: 
-Actual time needed to complete: 
+Start time: 2pm
+Finish time: 8pm
+Actual time needed to complete: 6 hours
 
 Number and name of feature: browse search results
 Estimate of time needed to complete: 1.5 hours
-Start time: 
-Finish time: 
-Actual time needed to complete: 
+Start time: 4pm
+Finish time: 8pm
+Actual time needed to complete: 4 hours
 
 Number and name of feature: 
 Estimate of time needed to complete: 
@@ -72,4 +72,6 @@ Actual time needed to complete:
 
 ## Credits and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
--->
+--> 
+(Pantone by helen florez)[https://color.adobe.com/search?q=books]
+(Micheal Falk)[https://www.linkedin.com/in/michaeldfalk/]

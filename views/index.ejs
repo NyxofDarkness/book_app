@@ -22,7 +22,10 @@
         <p class="textbody" id="author">
           <%= books.author %>
         </p>
-        <a href="/books/<%= books.id %>">View Book Details</a>
+        <form action="/books/<%= books.id %>">
+          <input type="submit" value="View Book Details" />
+        </form>
+
       </li>
       <% })%>
     </ul>
