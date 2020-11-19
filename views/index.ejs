@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include('../views/pages/layout/head.ejs') %>
+</head>
+
+<body>
+  <header>
+    <%- include('../views/pages/layout/header.ejs') %>
+  </header>
+  <main>
+    <h2>Welcome to your bookshelf</h2>
+    <div>Number of Saved Books: <%= results.length %></div>
+    <ul>
+      <% results.forEach(function(books) {%>
+      <li class="searchresults" data-id="<%= books.id %>">
+        <img src="<%= books.image_url %>" alt="<%= books.title %>">
+        <p class="textbody" id="title">
+          <%= books.title %>
+        </p>
+        <p class="textbody" id="author">
+          <%= books.author %>
+        </p>
+        <a href="/books/<%= books.id %>">View Book Details</a>
+      </li>
+      <% })%>
+    </ul>
+  </main>
+</body>
+
+</html>
+
+<!-- OMG I HATE YOU JUST DO THE THING HTML -->

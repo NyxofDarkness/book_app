@@ -25,6 +25,30 @@ Start time: 8:06pm
 Finish time: 
 Actual time needed to complete: 
 
+Number and name of feature: DataBase Configuration
+Estimate of time needed to complete: 1 hour
+Start time: 2:13
+Finish time: 
+Actual time needed to complete: 
+
+Number and name of feature: User Acceptance Tests
+Estimate of time needed to complete: 2 hours
+Start time: 
+Finish time: 
+Actual time needed to complete: 
+
+Number and name of feature: Saved books displayed on homepage
+Estimate of time needed to complete: 2 hours
+Start time: 
+Finish time: 
+Actual time needed to complete: 
+
+Number and name of feature: browse search results
+Estimate of time needed to complete: 1.5 hours
+Start time: 
+Finish time: 
+Actual time needed to complete: 
+
 Number and name of feature: 
 Estimate of time needed to complete: 
 Start time: 

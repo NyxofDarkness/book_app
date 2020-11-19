@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include('../layout/head.ejs') %>
+</head>
+
+<body>
+  <%- include('../layout/header.ejs') %>
+  <main>
+    <h2>Details of Book: </h2>
+    <ul>
+      <div class="bookboxes">
+        <li>
+          <img src="<%= book.image_url %>" alt="<%= book.title %>">
+        </li>
+        <li class="textbody" id="author">
+          <%= book.author %>
+        </li>
+        <li class="textbody" id="description">
+          Description: <%= book.description %>
+        </li>
+        <li class="textbody" id="description">
+          ISBN: <%= book.isbn %>
+        </li>
+      </div>
+    </ul>
+    <a href="../">Your Bookshelf Home</a>
+  </main>
+</body>
+
+</html>
