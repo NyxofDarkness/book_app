@@ -1,5 +1,5 @@
 *{
-  background-color: rgb(221, 179, 112;
+  background-color: rgb( 135, 64, 25);
   text-align: center;
   box-sizing: border-box;
 }
@@ -7,10 +7,10 @@ header{
   height: 10vw;
   width: 100vw;    
   background-color: rgb(135, 64, 25);
-  color: rgb(107, 76, 46);
+  color: rgb( 221, 179, 112);
   text-align: left;
-  font-size: x-large;
+  font-size: 2vw;
   margin: auto;
   padding: 2vw;
 }
-
+/* vw = Relative to 1% of the width of the viewport* */

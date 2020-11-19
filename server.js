@@ -5,6 +5,7 @@ const express = require('express');
 const app = express();
 const superagent = require('superagent');
 const pg = require('pg');
+const methodOverride = require('method-override');
 
 
 const PORT = process.env.PORT || 5000;
@@ -13,7 +14,7 @@ const client = new pg.Client(process.env.DATABASE_URL);
 let bookInfo = [];
 
 
-
+app.use(methodOverride('_method'));
 app.use('/public', express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
@@ -22,19 +23,45 @@ app.get('/', renderHome); // homepage-works
 app.get('/searches/new', showForm); // form page- works
 app.get('/hello', showHello); //null
 app.get('/error', showError); // all encompassing error
-app.get('/books/:books_id', getBookDetails); // book details from shelf
+app.get('/books/:books_id', getBookDetails); // book details from shelf-works
 app.post('/searches', createSearch); // book results to choose from-works
-app.post('/add', addBooks); // add to bookshelf
+app.post('/add', addBooks); // add to bookshelf-works
+app.get('/update/:book_id', userNewBook);
+app.get('/detail/:book_id', userUpdate);
+// app.put()
+
+
+// user updates book on shelf
+function userUpdate(req, res) {
+  res.render(`pages/books/update/${req.params.book_id}`);
+}
+
+// user add new book to shelf
+function userNewBook(req, res) {
+  let SQL = `UPDATE books SET 
+  author=$2, 
+  title=$3, 
+  image_url=$4, 
+  description=$5, 
+  isbn=$6 
+  WHERE id=$1;`;
+  console.log('here is the first: ', SQL);
+  let values = [req.params.book_id, req.body.author, req.body.title, req.body.image, req.body.description, req.body.isbn];
+
+  return client.query(SQL, values)
+    .then(result => res.render('pages/books/update', { book: result.rows[0] }))
+    .catch(err => console.error('unable to get book details', err));
+}
 
 // add books to bookshelf
 function addBooks(req, res) {
   let { author, title, image, description, isbn } = req.body;
-  console.log('im over here', req.body);
+  // console.log('im over here', req.body);
   // image = req.body.image;
-  console.log('are you working now beach', image);
+  // console.log('are you working now beach', image);
   let SQL = `INSERT INTO books(author, title, image_url, description, isbn) VALUES ($1,$2,$3,$4,$5);`;
   let values = [author, title, image, description, isbn];
-  console.log('SQL IS WORKING: ', values);
+  // console.log('SQL IS WORKING: ', values);
 
   return client.query(SQL, values)
     .then(res.redirect('/'))

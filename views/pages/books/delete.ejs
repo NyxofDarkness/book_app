@@ -24,7 +24,7 @@
           ISBN: <%= book.isbn %>
         </li>
       </div>
-      <form action="/update/<%= book.id %>?_method=PUT" method="post">
+      <form action="/update/<%= book.id %>?_method=DELETE" method="post">
 
         <input name="title" value="<%= book.title %>">
         <input name="image" value="<%= book.image %>">
@@ -34,9 +34,7 @@
         <!-- <button type="submit">Update this Book on your bookshelf!</button> -->
       </form>
     </ul>
-    <form action="../update/<%= book.id %>">
-      <input type="submit" value=" Click Here to Update this Book on your bookshelf!" />
-    </form>
+
     <form action="../delete/<%= book.id %>">
       <input type="submit" value="WARNING: DELETE this Book from your bookshelf!" />
     </form>
