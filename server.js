@@ -26,7 +26,26 @@ app.get('/error', showError); // all encompassing error
 app.get('/books/:books_id', getBookDetails); // book details from shelf-works
 app.post('/searches', createSearch); // book results to choose from-works
 app.post('/add', addBooks); // add to bookshelf-works
+app.get('/update/:book_id', userNewBook);
+app.get('/detail/:book_id', userUpdate);
 // app.put()
+
+
+// user updates book on shelf
+function userUpdate(req, res) {
+  res.render(`pages/books/update/${req.params.book_id}`);
+}
+
+// user add new book to shelf
+function userNewBook(req, res) {
+  let { author, title, image, description, isbn } = req.body;
+  let SQL = `UPDATE books SET author=$1, title=$2, image=$3, description=$4, isbn=$5 WHERE id=$6;`
+  let values = [author, title, image, description, isbn, req.params.book_id];
+
+  client.query(SQL, values)
+    .then(res.redirect(`/books/${req.params.book_id}`))
+    .catch(err => console.error(err));
+}
 
 // add books to bookshelf
 function addBooks(req, res) {
