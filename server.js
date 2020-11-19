@@ -38,24 +38,30 @@ function userUpdate(req, res) {
 
 // user add new book to shelf
 function userNewBook(req, res) {
-  let { author, title, image, description, isbn } = req.body;
-  let SQL = `UPDATE books SET author=$1, title=$2, image=$3, description=$4, isbn=$5 WHERE id=$6;`
-  let values = [author, title, image, description, isbn, req.params.book_id];
+  let SQL = `UPDATE books SET 
+  author=$2, 
+  title=$3, 
+  image_url=$4, 
+  description=$5, 
+  isbn=$6 
+  WHERE id=$1;`;
+  console.log('here is the first: ', SQL);
+  let values = [req.params.book_id, req.body.author, req.body.title, req.body.image, req.body.description, req.body.isbn];
 
-  client.query(SQL, values)
-    .then(res.redirect(`/books/${req.params.book_id}`))
-    .catch(err => console.error(err));
+  return client.query(SQL, values)
+    .then(result => res.render('pages/books/update', { book: result.rows[0] }))
+    .catch(err => console.error('unable to get book details', err));
 }
 
 // add books to bookshelf
 function addBooks(req, res) {
   let { author, title, image, description, isbn } = req.body;
-  console.log('im over here', req.body);
+  // console.log('im over here', req.body);
   // image = req.body.image;
-  console.log('are you working now beach', image);
+  // console.log('are you working now beach', image);
   let SQL = `INSERT INTO books(author, title, image_url, description, isbn) VALUES ($1,$2,$3,$4,$5);`;
   let values = [author, title, image, description, isbn];
-  console.log('SQL IS WORKING: ', values);
+  // console.log('SQL IS WORKING: ', values);
 
   return client.query(SQL, values)
     .then(res.redirect('/'))

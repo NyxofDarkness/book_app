@@ -1,20 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <%- include(/views/layout/head.ejs) %>
+  <%- include('../layout/head.ejs') %>
 </head>
 
 <body>
-  <header>
-    <%- include('/layout/header.ejs') %>
-  </header>
+  <%- include('../layout/header.ejs') %>
   <main>
+    <h2>Details of Book: </h2>
+    <ul>
+      <div class="bookboxes">
+        <li>
+          <img src="<%= book.image_url %>" alt="<%= book.title %>">
+        </li>
+        <li class="textbody" id="author">
+          <%= book.author %>
+        </li>
+        <li class="textbody" id="description">
+          Description: <%= book.description %>
+        </li>
+        <li class="textbody" id="description">
+          ISBN: <%= book.isbn %>
+        </li>
+      </div>
 
+    </ul>
 
+    <a href="../">Your Bookshelf Home</a>
   </main>
-  <footer>
-    <%- include('layout/footer.ejs')
-    </footer>
-  </body>
+</body>
+
 </html>

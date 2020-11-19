@@ -1,20 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <%- include(/views/layout/head.ejs) %>
+  <%- include('../layout/head.ejs') %>
 </head>
 
 <body>
-  <header>
-    <%- include('/layout/header.ejs') %>
-  </header>
+  <%- include('../layout/header.ejs') %>
   <main>
+    <h2>Details of Book: </h2>
+    <ul>
+      <div class="bookboxes">
+        <li>
+          <img src="<%= book.image_url %>" alt="<%= book.title %>">
+        </li>
+        <li class="textbody" id="author">
+          <%= book.author %>
+        </li>
+        <li class="textbody" id="description">
+          Description: <%= book.description %>
+        </li>
+        <li class="textbody" id="description">
+          ISBN: <%= book.isbn %>
+        </li>
+      </div>
+      <form action="/update/<%= book.id %>?_method=DELETE" method="post">
 
+        <input name="title" value="<%= book.title %>">
+        <input name="image" value="<%= book.image %>">
+        <input name="author" value="<%= book.author %>">
+        <input name="description" value="<%= book.description %>">
+        <input name="isbn" value="<%= book.isbn %>">
+        <!-- <button type="submit">Update this Book on your bookshelf!</button> -->
+      </form>
+    </ul>
 
+    <form action="../delete/<%= book.id %>">
+      <input type="submit" value="WARNING: DELETE this Book from your bookshelf!" />
+    </form>
+    <a href="../">Your Bookshelf Home</a>
   </main>
-  <footer>
-    <%- include('layout/footer.ejs')
-    </footer>
-  </body>
+</body>
+
 </html>
