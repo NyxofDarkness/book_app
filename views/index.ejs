@@ -14,19 +14,22 @@
     <div>Number of Saved Books: <%= results.length %></div>
     <ul>
       <% results.forEach(function(books) {%>
+
       <li class="searchresults" data-id="<%= books.id %>">
         <img src="<%= books.image_url %>" alt="<%= books.title %>">
+
         <p class="textbody" id="title">
           <%= books.title %>
         </p>
         <p class="textbody" id="author">
           <%= books.author %>
         </p>
-        <form action="/books/<%= books.id %>">
+        <!-- <form action="/books/<%= books.id %>">
           <input type="submit" value="View Book Details" />
-        </form>
-
+        </form> -->
+        <a href="/books/<%= books.id %>">View Book Details</a>
       </li>
+      
       <% })%>
     </ul>
   </main>
