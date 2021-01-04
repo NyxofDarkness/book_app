@@ -9,23 +9,27 @@
   <%- include('../layout/header.ejs') %>
   <main>
     <h2>Details of Book: </h2>
+
     <ul>
       <div class="bookboxes">
-        <li>
-          <img src="<%= book.image_url %>" alt="<%= book.title %>">
-        </li>
-        <li class="textbody" id="author">
-          <%= book.author %>
-        </li>
-        <li class="textbody" id="description">
-          Description: <%= book.description %>
-        </li>
-        <li class="textbody" id="description">
-          ISBN: <%= book.isbn %>
-        </li>
+
+          <li data-id="<%= book.id %>">
+              <form action="/update/<%= books.id %>?_method=PUT" method="post">
+                  <img src="<%= book.image_url %>" alt="<%= book.title %>">
+                  <input name="title" value="<%= o.title %>">
+                  <input name="author" value="<%= o.author %>">
+                  <input name="isbn" value="<%= o.isbn %>">
+                  <input name="image_url" value="<%= o.image %>">
+                  <input name="description" value="<%= o.description %>">
+                  <button type="submit">Update Book!</button>
+              </form>
+          </li>
+
       </div>
 
-    </ul>
+      <a href="../">Delete Book</a>
+
+  </ul>
 
     <a href="../">Your Bookshelf Home</a>
   </main>

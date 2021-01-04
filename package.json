@@ -1,7 +1,7 @@
 {
   "name": "book_app",
   "version": "1.0.0",
-  "description": "",
+  "description": "**Author**: Audrena Vacirca **Version**: 1.0.5",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -30,6 +30,7 @@
     "method-override": "^3.0.0",
     "node.js": "0.0.1-security",
     "pg": "^8.5.1",
+    "postgresql": "0.0.1",
     "superagent": "^6.1.0"
   }
 }
