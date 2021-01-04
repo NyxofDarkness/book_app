@@ -31,15 +31,18 @@
         <input name="author" value="<%= book.author %>">
         <input name="description" value="<%= book.description %>">
         <input name="isbn" value="<%= book.isbn %>">
-        <!-- <button type="submit">Update this Book on your bookshelf!</button> -->
+        <button type="submit">Update this Book on your bookshelf!</button>
       </form>
+      <button type="submit"> Update Book!</button>
+      <a href="../update/<%= book.id %>"">Update Book</a>
+      <a href=" ../">Delete Book</a>
     </ul>
-    <form action="../update/<%= book.id %>">
+    <!-- <form action="../update/<%= book.id %>">
       <input type="submit" value=" Click Here to Update this Book on your bookshelf!" />
     </form>
     <form action="../delete/<%= book.id %>">
       <input type="submit" value="WARNING: DELETE this Book from your bookshelf!" />
-    </form>
+    </form> -->
     <a href="../">Your Bookshelf Home</a>
   </main>
 </body>
